@@ -1,6 +1,11 @@
 use std::collections::HashMap;
 
 /// Usage example of a hash map
+///
+/// HashMaps have got random access to the memory.
+/// Every value is associated with a specific key
+/// The key is passed into a hash function with decides where to store the value.
+/// Therefore, hashMaps can easily grow in size and do not have a fixed size
 pub fn hash_map() {
 
     // Initialize the hashmap
