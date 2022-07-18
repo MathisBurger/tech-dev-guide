@@ -11,25 +11,30 @@ pub trait Hashable {
 }
 
 pub struct HashTable {
-    table: Vec<LinkedList<usize>>
+    table: [LinkedList<usize>; 8]
 }
 
 impl HashTable {
 
     pub fn new() -> Self {
-        HashTable {table: vec![]}
+        HashTable {table: [
+            LinkedList::new(),
+            LinkedList::new(),
+            LinkedList::new(),
+            LinkedList::new(),
+            LinkedList::new(),
+            LinkedList::new(),
+            LinkedList::new(),
+            LinkedList::new()
+        ]}
     }
 
     /// Inserts a new element into the hash table
     pub fn insert(&mut self, key: usize) {
         let hash = key.hash();
-        let list = self.table.get(hash);
-        let mut new_list = LinkedList::new();
-        if list.is_some() {
-            new_list = list.unwrap().clone();
-        }
-        new_list.push_back(key);
-        self.table.insert(hash, new_list);
+        let mut list = self.table[hash % 8].clone();
+        list.push_back(key);
+        self.table[hash % 8] = list;
     }
 }
 
