@@ -7,3 +7,4 @@ I need to understand it more in detail.
 - HashTable
 - Trees (technical terms)
 - Trees (implementation)
+- Trie (documentation)
