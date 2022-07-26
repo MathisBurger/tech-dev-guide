@@ -65,7 +65,7 @@ impl TreeNode {
         }
         if data < self.data {
             if Rc::clone(&self.left).is_some() {
-                if Rc::clone(&self.left).data == data {
+                if Rc::clone(&self.left).unwrap().data == data {
                     return true;
                 } else {
                     let mut left_mut = Rc::clone(&self.left);
