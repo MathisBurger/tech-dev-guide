@@ -8,3 +8,5 @@ it could also help you find a solution for a dsa issue you are confronted with.<
 
 - DSA
   - <a href="src/dsa/hash_maps.rs">HashMap</a> 
+  - <a href="src/dsa/hash_tables.rs">HashTable</a>
+  - <a href="src/dsa/linked_list.rs">LinkedList</a>
